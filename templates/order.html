@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/order-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Order Now</h1>
+                    <span class="subheading">Choose - Place - Delivered</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Message Flashing -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <marquee><h5 class="text-danger">Helpline Nos : {{params['help']}}</h5></marquee>
+            <h5>Select the products and Fill out the order details. </h5>
+            <hr>
+            <form name="orderForm" id="orderForm" action="/order" method="post">
+                
+                <div class="form-group">
+
+                    <select required class="form-control" id="product" name="product" placeholder="Select Your Item" multiple>
+                        {% for prod in prods %}
+                        <option value="{{ prod.prodName }}">{{ prod.prodName }}</option>
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name"required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Phone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Address (Specify other items here if.)</label>
+                    <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Place Order</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+
+ $(document).ready(function(){
+
+ var multipleCancelButton = new Choices('#product', {
+ removeItemButton: true,
+ maxItemCount:200,
+ searchResultLimit:200,
+ renderChoiceLimit:200
+ });
+
+
+ });   
+ console.log(product.value());
+
+</script>
+{% endblock %}

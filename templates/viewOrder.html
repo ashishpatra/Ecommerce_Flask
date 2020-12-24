@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/dash-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Admin Panel</h1>
+                    <span class="subheading">Manage Your Site</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+            <h3>Basic Actions</h3>
+
+            <a href="/dashboard"><button class="btn btn-primary">Dashboard Home</button></a>
+            <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+            <hr>
+            <h3>Orders Placed</h3>
+            <hr>
+
+            {% for order in orders %}
+            <div class="post-preview">
+                <h5 class="post-title">{{ order.name }}</h5>
+                <h5 class="post-subtitle">{{order.item}}</h5>
+                <p>Phone : {{order.phone}} <br> Address : {{order.address}}</p>
+            </div>
+            
+            <div class="row">
+                <a href="tel:{{order.phone}}"><button class="btn btn-success">Call</button></a>
+                <a href="/removeOrder/{{order.sno}}"><button class="btn btn-danger ml-1">Delete</button></a>
+            </div>
+
+            <hr>
+            
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

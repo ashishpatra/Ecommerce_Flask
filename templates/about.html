@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/about-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>About Us</h1>
+                    <span class="subheading">Who we are ?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <p>{{params['about_text']}}</p>
+            <marquee><h5 class="text-danger">Helpline Nos : {{params['help']}}</h5></marquee>
+            <center><h5>Associated Members</h5></center>
+            <hr>
+            
+            <div class="card mb-3 text-white bg-danger mb-3" style="max-width: 40rem;">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{ url_for('static', filename='img/binod.jpg') }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Your Name<br>( CEO )</center></h5>
+                            <center><p class="card-text">Your Position</p></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 text-white bg-primary mb-3" style="max-width: 40rem;">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{ url_for('static', filename='img/bibek.jpg') }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Another Name<br>( MD )</center></h5>
+                            <center><p class="card-text">Another Position</p></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 text-white bg-success mb-3" style="max-width: 40rem;">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{ url_for('static', filename='img/trupti.jpg') }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Another Name<br>( Financial Director )</center></h5>
+                            <center><p class="card-text">Another Position</p></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 text-white bg-dark mb-3" style="max-width: 40rem;">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{ url_for('static', filename='img/ashish.jpg') }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><center>Your Name<br>( Developer )</center></h5>
+                            <center><p class="card-text">Software Developer, Web Developer, UI Designer, Backend & Frontend Developer</p></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
