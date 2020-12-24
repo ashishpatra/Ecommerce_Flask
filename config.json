@@ -1,0 +1,23 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/your_company",
+    "prod_uri": "mysql://root:@localhost/your_company",
+    "fb_url": "https://facebook.com/your_company",
+    "tw_url": "https://twitter.com/your_company",
+    "gh_url": "https://github.com/your_company",
+    "blog_name": "Yor Blog Name",
+    "tag_line": "your tag_line",
+    "gmail-user": "your email",
+    "gmail-password": "your gmail password for getting the order details",
+    "about_text": "about your company",
+    "no_of_posts": 2,
+    "login_image": "login.svg",
+    "admin_user": "admin-name here",
+    "admin_password": "admin password here",
+    "upload_location": "upload location here",
+    "help": "company contact no here"
+  }
+
+}
